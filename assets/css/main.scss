@@ -33,6 +33,10 @@ search: false
     }
 }
 
+h2 a, h2 a:visited {
+    color: #ea4d1b;
+}
+
 #main a {
     text-decoration: none;
     
@@ -40,6 +44,14 @@ search: false
         color: #ea4d1b;
         text-decoration: underline;
     }
+}
+
+.page__content a {
+    color: #ea4d1b;
+}
+
+.toc__menu a {
+    color: initial;
 }
 
 
