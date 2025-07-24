@@ -8,6 +8,8 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+/* Customization */
+
 .page__content :not(pre)>code {
     background: #f9f2f4;
     color: #c7254e;
@@ -19,8 +21,20 @@ search: false
 
 .greedy-nav{
     background: transparent;
-}
+    a {
+        color: #fff;
 
+        &:hover
+        {
+            color: #fff;
+        }
+    }
+    .hidden-links a
+    {
+        color: #000;
+    }
+}
+/*
 .greedy-nav a {
     color: #fff;
 }
@@ -34,7 +48,7 @@ search: false
 {
     color: #000;
 }
-
+*/
 #main a, #main a:visited
 {
     /*color: #ea4d1b;*/
@@ -45,4 +59,29 @@ search: false
 {
     color: #ea4d1b;
     text-decoration: underline;
+}
+
+/* for page without sidebar */
+.fullwide {
+    .page {
+        float: left;
+        width: 100%;
+        @include breakpoint($large) {
+        padding-left: 0;
+        }
+
+        @include breakpoint($x-large) {
+        padding-left: 0;
+        }
+  }
+
+  .page__related {
+        @include breakpoint($large) {
+        padding-left: 0;
+        }
+
+        @include breakpoint($x-large) {
+        padding-left: 0;
+        }
+  }
 }
