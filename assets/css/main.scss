@@ -7,3 +7,30 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.page__content :not(pre)>code {
+    background: #f9f2f4;
+    color: #c7254e;
+}
+
+.masthead{
+    background-color: #353535;
+}
+
+.greedy-nav{
+    background: transparent;
+}
+
+.greedy-nav a {
+    color: #fff;
+}
+
+.greedy-nav a:hover
+{
+    color: #fff;
+}
+
+.greedy-nav .hidden-links a
+{
+    color: #000;
+}

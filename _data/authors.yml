@@ -1,0 +1,19 @@
+# /_data/authors.yml
+
+Jirka Daněk:
+  name        : "Jirka Daněk"
+  bio         : "Vývojář pluginů pro SunLight CMS a zakladatel FoSC"
+  avatar      : "/assets/images/bio-jdanek.png"
+  links:
+    - label: "GITHUB"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jDanek"
+
+Golfin:
+  name        : "Golfin"
+  bio         : "Od laika pro laiky"
+  avatar      : "/assets/images/bio-golfin.png"
+  links:
+    - label: "GITHUB"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Helwa-Surinen"

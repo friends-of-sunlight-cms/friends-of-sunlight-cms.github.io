@@ -1,11 +1,13 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
+  - title: "O komunitě"
+    url: /about-us/
+  - title: Github
+    url: https://github.com/friends-of-sunlight-cms
+    target: _blank
+  - title: SunLight CMS
+    url: https://sunlight-cms.cz/
+    target: _blank
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
