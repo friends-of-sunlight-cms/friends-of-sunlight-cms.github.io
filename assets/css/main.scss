@@ -35,13 +35,13 @@ search: false
     color: #000;
 }
 
-a
+#main a, a:visited
 {
     color: #ea4d1b;
     text-decoration: none;
 }
 
-a:hover
+#main a:hover
 {
     color: #ea4d1b;
     text-decoration: underline;
