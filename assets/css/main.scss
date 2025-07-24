@@ -54,6 +54,11 @@ h2 a, h2 a:visited {
     color: initial;
 }
 
+.greedy-nav .visible-links a:before {
+    height: 2px;
+    background: #ffffff;
+}
+
 
 /* for page without sidebar */
 .fullwide {
