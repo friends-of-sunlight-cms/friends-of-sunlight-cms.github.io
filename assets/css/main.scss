@@ -15,51 +15,33 @@ search: false
     color: #c7254e;
 }
 
-.masthead{
+.masthead {
     background-color: #353535;
 }
 
-.greedy-nav{
+.greedy-nav {
     background: transparent;
     a {
         color: #fff;
 
-        &:hover
-        {
+        &:hover {
             color: #fff;
         }
     }
-    .hidden-links a
-    {
+    .hidden-links a {
         color: #000;
     }
 }
-/*
-.greedy-nav a {
-    color: #fff;
-}
 
-.greedy-nav a:hover
-{
-    color: #fff;
-}
-
-.greedy-nav .hidden-links a
-{
-    color: #000;
-}
-*/
-#main a, #main a:visited
-{
-    /*color: #ea4d1b;*/
+#main a {
     text-decoration: none;
+    
+    &:hover {
+        color: #ea4d1b;
+        text-decoration: underline;
+    }
 }
 
-#main a:hover
-{
-    color: #ea4d1b;
-    text-decoration: underline;
-}
 
 /* for page without sidebar */
 .fullwide {
@@ -67,21 +49,25 @@ search: false
         float: left;
         width: 100%;
         @include breakpoint($large) {
-        padding-left: 0;
+            padding-left: 0;
+            padding-inline-end: 0;
         }
 
         @include breakpoint($x-large) {
-        padding-left: 0;
+            padding-left: 0;
+            padding-inline-end: 0;
         }
-  }
+    }
 
-  .page__related {
+    .page__related {
         @include breakpoint($large) {
-        padding-left: 0;
+            padding-left: 0;
+            padding-inline-end: 0;
         }
 
         @include breakpoint($x-large) {
-        padding-left: 0;
+            padding-left: 0;
+            padding-inline-end: 0;
         }
-  }
+    }
 }
