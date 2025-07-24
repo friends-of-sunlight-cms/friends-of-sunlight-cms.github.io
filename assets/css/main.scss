@@ -46,7 +46,9 @@ h2 a, h2 a:visited {
     }
 }
 
-.page__content a {
+.page__content a,
+.page__content a:visited,
+.page__content a:hover {
     color: #ea4d1b;
 }
 
