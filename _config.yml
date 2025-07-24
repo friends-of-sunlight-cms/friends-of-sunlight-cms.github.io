@@ -311,5 +311,5 @@ defaults:
       type: page
     values:
       layout: single
-      classes: wide
+      classes: fullwide
       author_profile: false
