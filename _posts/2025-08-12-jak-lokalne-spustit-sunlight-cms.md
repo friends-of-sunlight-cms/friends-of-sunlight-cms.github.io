@@ -27,7 +27,7 @@ Webový server je základ, bez kterého CMS neběží. Nejčastěji můžete pou
 
 ## Krok 1: Instalace XAMPP a vytvoření databáze
 
-1. Stáhněte a nainstalujte XAMPP podle pokynů na https://www.apachefriends.org/.
+1. Stáhněte a nainstalujte XAMPP podle pokynů na [https://www.apachefriends.org/](https://www.apachefriends.org/).
 2. Spusťte XAMPP ovládací panel a zapněte Apache a MySQL.
 3. V prohlížeči otevřete adresu: ``http://localhost/phpmyadmin/`` - tady spravujete své databáze.
 4. Vytvořte novou databázi pro váš SunLight CMS projekt, například ``sunlight8dev``.
@@ -69,7 +69,7 @@ Tyto moduly jsou v PHP standardně zakomentované, proto je potřeba je aktivova
 extension=gd
 extension=zip
 ```
-5. Uložte změny a restartujte Apache (v XAMPP ovládacím panelu klikněte na Stop a pak znovu Start u Apache)
+5. Uložte změny a restartujte Apache *(v XAMPP ovládacím panelu klikněte na Stop a pak znovu Start u Apache)*
 
  > Bez aktivace těchto rozšíření by některé funkce SunLight CMS nefungovaly správně.
 
@@ -83,7 +83,7 @@ extension=zip
 
 ## Doporučení a tipy
  - Pokud používáte firewall, ujistěte se, že neblokuje port ``80`` *(standardní port pro HTTP)*.
- - V případě potřeby můžete změnit port Apache (např. na 8080), v takovém případě pak do URL použijete ``http://localhost:8080/sunlight-8-dev/``.
+ - V případě potřeby můžete změnit port Apache *(např. na 8080)*, v takovém případě pak do URL použijete ``http://localhost:8080/sunlight-8-dev/``.
  - Nezapomeňte mít zapnutou MySQL databázi, protože SunLightCMS databázi používá.
  - Místo ``http://localhost`` se někdy můžete setkat s adresou ``http://127.0.0.1``. Obě tyto adresy odkazují na váš vlastní počítač *(tzv. loopback)*. Rozdíl je čistě technický – ``localhost`` je název, který váš systém překládá na IP adresu ``127.0.0.1``. V praxi to tedy znamená totéž a při přístupu k lokálním serverům můžete použít obě varianty.
  
@@ -96,4 +96,5 @@ Lokální prostředí nemá nastaven SSL certifikát, takže přístup přes ``h
 
 ## Závěrem
 Ačkoliv existují i jiné způsoby, jak spustit SunLight CMS lokálně *(třeba přes Docker)*, XAMPP je skvělá volba pro začátečníky i pokročilé. Je jednoduchý, rychlý a nabízí všechny nástroje, které k vývoji budete potřebovat.
+
 
