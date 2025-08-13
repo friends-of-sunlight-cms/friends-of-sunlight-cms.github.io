@@ -1,7 +1,6 @@
 ---
 title: "Blog a tutoriály"
 author: "Jirka Daněk"
-classes: wide
 toc: false
 toc_sticky: true
 categories:

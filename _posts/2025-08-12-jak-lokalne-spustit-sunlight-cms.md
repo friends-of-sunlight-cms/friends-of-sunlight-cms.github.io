@@ -1,7 +1,6 @@
 ---
 title: "Jak lokálně spustit SunLight CMS 8"
 author: "Jirka Daněk"
-classes: wide
 toc: true
 toc_sticky: true
 categories:
@@ -11,7 +10,6 @@ tags:
   - návody
 ---
 
-# Jak lokálně spustit SunLight CMS 8
 
 Pokud chcete pro SunLight CMS 8 vyvíjet nebo ho testovat lokálně, je potřeba mít funkční webový server s podporou PHP a databáze MySQL. Existuje několik možností, jak to zajistit, já sám spíš z lenosti preferuji XAMPP, protože jej rychle nainstalujete a spustíte bez složitých konfigurací. Navíc nabízí nástroje jako phpMyAdmin, které usnadňují správu databází. Tento článek se bude věnovat spuštění na Windows.
 
@@ -87,11 +85,9 @@ extension=zip
  - Nezapomeňte mít zapnutou MySQL databázi, protože SunLightCMS databázi používá.
  - Místo ``http://localhost`` se někdy můžete setkat s adresou ``http://127.0.0.1``. Obě tyto adresy odkazují na váš vlastní počítač *(tzv. loopback)*. Rozdíl je čistě technický – ``localhost`` je název, který váš systém překládá na IP adresu ``127.0.0.1``. V praxi to tedy znamená totéž a při přístupu k lokálním serverům můžete použít obě varianty.
  
-***
 **Upozornění:**
-
 Lokální prostředí nemá nastaven SSL certifikát, takže přístup přes ``http://localhost`` **nebude** mít ``HTTPS``. Moderní prohlížeče vás proto budou upozorňovat na nezabezpečené připojení. SSL certifikát lze nastavit i lokálně, ale to není cílem tohoto článku.
-*** 
+{: .notice--warning}
  
 
 ## Závěrem

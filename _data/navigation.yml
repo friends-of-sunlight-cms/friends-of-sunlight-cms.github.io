@@ -2,12 +2,10 @@
 main:
   - title: "O komunitě"
     url: /about-us/
-  - title: Github
-    url: https://github.com/friends-of-sunlight-cms
-    target: _blank
-  - title: SunLight CMS
-    url: https://sunlight-cms.cz/
-    target: _blank
+  - title: Články
+    url: /category-archive/
+  - title: Glosář
+    url: /glossary/    
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
