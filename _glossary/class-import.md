@@ -44,6 +44,38 @@ $query = Database::query();
 ---
 
 
+**Aliasy tříd (as)**
+
+Někdy má třída dlouhý název nebo chcete předejít kolizi názvů. V takovém případě můžete při importu použít alias pomocí ``as``:
+
+```php
+<?php
+use Psr\Log\LoggerInterface as Logger;
+use App\Logger\Logger as Log;
+
+// Teď můžete používat zkrácené názvy:
+function writeLog(Logger $logger) {
+    $logger->info('Log message');
+}
+
+$logger = new Log('app');
+```
+
+V prostředí SunLightu nejčastěji narazíte na ``DB`` alias pro třídu ``Sunlight\Database\Database``
+
+```php
+<?php
+use Sunlight\Database\Database as DB;
+
+$query = DB::query('SELECT ...');
+```
+
+**Kdy aliasy použít:**
+- Když máte třídy se stejným názvem z různých jmenných prostorů
+- Pro zkrácení dlouhých názvů tříd
+- Pro lepší čitelnost kódu
+
+
 ### Kde se třídy importují?  
 
 - **Vždy na začátku souboru** *(nejlíp hned za ``<?php``)*.  
