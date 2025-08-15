@@ -74,20 +74,20 @@ plugins/
 Tohle je nudné, ale důležité. Název vašeho pluginu:
 
 
-### By měl:
+### By měl
 
 - **Být jedinečný** - nesmí se shodovat s jiným pluginem
 - **Odrážet účel** - z názvu by mělo být jasné, co plugin dělá
 - **Být malými písmeny** - ``mujplugin``
 
 
-### Může:
+### Může
 
 - **Používat pomlčky** - například ``better-forum``, `image-gallery`
 - **Používat podtržítka** - ``muj_plugin``
 
 
-### By neměl obsahovat :
+### By neměl obsahovat
 
 - **Mezery** - ``muj plugin``
 - **Diakritika** - ``můj-plugin``
