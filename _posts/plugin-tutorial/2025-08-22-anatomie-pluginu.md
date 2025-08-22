@@ -294,7 +294,9 @@ Po prvotním vyděšení si pojďme vysvětlit jednotlivé části a jejich vlas
 **``config_defaults``** - Výchozí konfigurace:
 - Systém automaticky vytvoří formulář v administraci
 - Přístup přes ``$this->getConfig()`` v pluginu, případně přes instanci získanou z plugin manageru.
+
 ```php
+<?php
 use Sunlight\Core;
 use SunlightExtend\MujPlugin\MySuperPlugin;
 
@@ -441,3 +443,4 @@ Pokud si chcete prohlédnout fungující příklady, nahlédněte na tyto repozi
 - [Plugin s vlastním HCM](https://github.com/friends-of-sunlight-cms/example-hcm) 
 - [Oficiální multi-jazykový plugin](https://github.com/sunlight-cms/multilang-plugin)
 - [Komunitní pluginy](https://github.com/friends-of-sunlight-cms)
+
