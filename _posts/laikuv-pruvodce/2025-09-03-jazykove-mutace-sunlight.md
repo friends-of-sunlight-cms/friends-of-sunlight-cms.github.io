@@ -4,9 +4,9 @@ author: "Golfin"
 toc: true
 toc_sticky: true
 categories:
-  - blog
+  - laikuv-pruvodce
 tags:
-  - blog
+  - laikuv-pruvodce
   - navody
 ---
 
