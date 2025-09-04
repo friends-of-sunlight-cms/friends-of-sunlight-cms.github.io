@@ -1,5 +1,5 @@
 ---
-title: "Jazykové mutace v SunLight CMS 8"
+title: "JazykovÃ© mutace v SunLight CMS 8"
 author: "Golfin"
 toc: true
 toc_sticky: true
@@ -7,22 +7,22 @@ categories:
   - blog
 tags:
   - blog
-  - návody
+  - navody
 ---
 
-# Práce s jazykovımi balíèky
+# PrÃ¡ce s jazykovÃ½mi balÃ­Äky
 
-Sunlight je jeden ze systémù, kterı pracuje s jazykem. A u se jedná o celı CMS, nebo o pluginy, které ho rozšiøují - vdy je monost pøizpùsobit web do rùznıch jazykù.
+Sunlight je jeden ze systÃ©mÅ¯, kterÃ½ pracuje s jazykem. AÅ¥ uÅ¾ se jednÃ¡ o celÃ½ CMS, nebo o pluginy, kterÃ© ho rozÅ¡iÅ™ujÃ­ - vÅ¾dy je moÅ¾nost pÅ™izpÅ¯sobit web do rÅ¯znÃ½ch jazykÅ¯.
 
 ### Jak to funguje?
 
-Systém pouívá jednoduché pole v php souboru, kde je na kadém øádku klíè k danému pøekladu. Základní jazykové balíèky (extendy) jsou v èeském a anglickém jazyce a jsou umístìny ve sloce Languages (\název vašeho webu\plugins\languages). Kadı jazyk má svoji sloku (adresáø) pojmenovanı podle zásad ISO Code. Napøíklad èeština má název adresáøe **cs** a angliètina **en**.
-Velmi zajímavá informace ohlednì ISO code je zde: [RSS-Specific Language Codes](https://www.rssboard.org/rss-language-codes). Zde se napøíklad dozvíme, jak rozlišit evropskou francouzštinu od kanadské.
-Ale podívejme se, jak to funguje. Ve sloce **cs** najdeme tøi soubory: admin_dictionary.php, dictionary.php a plugin.json. admin_dictionary.php je php skript pro administraèní èást Sunlight, dictionary.php pro veøejnou a soubor plugin.json inicializuje tento jazyk v celém systému Sunlight, tedy jako extend (plugin). U dalších jazykovıch balíèkù (napø. en) pøibude další sloka **class**, ve které je soubor EnglishLanguage.php. Je to tøída, která urèuje vlastnost jazyka, kterı se do dystému pøidává. V tomto pøípadì má název EnglishLanguage. Pro nìmèinu by to bylo DeutscheLanguage, pro francouzštinu FrancaisLanguage. A tak podobnì. Proè to není u èeského jazyka? protoe to je systémovı jazyk v èeském CMS systému.
+SystÃ©m pouÅ¾Ã­vÃ¡ jednoduchÃ© pole v php souboru, kde je na kaÅ¾dÃ©m Å™Ã¡dku klÃ­Ä k danÃ©mu pÅ™ekladu. ZÃ¡kladnÃ­ jazykovÃ© balÃ­Äky (extendy) jsou v ÄeskÃ©m a anglickÃ©m jazyce a jsou umÃ­stÄ›ny ve sloÅ¾ce Languages ``(\plugins\languages)``. KaÅ¾dÃ½ jazyk mÃ¡ svoji sloÅ¾ku (adresÃ¡Å™) pojmenovanÃ½ podle zÃ¡sad [ISO Code](https://cs.wikipedia.org/wiki/Seznam_k%C3%B3d%C5%AF_ISO_639-2). NapÅ™Ã­klad ÄeÅ¡tina mÃ¡ nÃ¡zev adresÃ¡Å™e ``cs`` a angliÄtina ``en``.
+Velmi zajÃ­mavÃ¡ informace ohlednÄ› ISO code je zde: [RSS-Specific Language Codes](https://www.rssboard.org/rss-language-codes). Zde se napÅ™Ã­klad dozvÃ­me, jak rozliÅ¡it evropskou francouzÅ¡tinu od kanadskÃ©.
+Ale podÃ­vejme se, jak to funguje. Ve sloÅ¾ce ``cs`` najdeme tÅ™i soubory: admin_dictionary.php, dictionary.php a plugin.json. admin_dictionary.php je php skript pro administraÄnÃ­ ÄÃ¡st Sunlight, dictionary.php pro veÅ™ejnou a soubor plugin.json inicializuje tento jazyk v celÃ©m systÃ©mu Sunlight, tedy jako extend (plugin). U dalÅ¡Ã­ch jazykovÃ½ch balÃ­ÄkÅ¯ *(napÅ™. en)* pÅ™ibude dalÅ¡Ã­ sloÅ¾ka ``class``, ve kterÃ© je soubor ``EnglishLanguage.php``. Je to tÅ™Ã­da, kterÃ¡ urÄuje vlastnost jazyka, kterÃ½ se do dystÃ©mu pÅ™idÃ¡vÃ¡. V tomto pÅ™Ã­padÄ› mÃ¡ nÃ¡zev EnglishLanguage. Pro nÄ›mÄinu by to bylo DeutscheLanguage, pro francouzÅ¡tinu FrancaisLanguage. A tak podobnÄ›. ProÄ to nenÃ­ u ÄeskÃ©ho jazyka? protoÅ¾e to je systÃ©movÃ½ jazyk v ÄeskÃ©m CMS systÃ©mu.
 
-*Poznámka od Jirky Daòka: Ty tøídy navíc jsou tam proto, protoe jiné státy pouívají jiné oddìlovaèe mìn, desetinnıch èísel a tohle øeší správnı vıpis*
+*PoznÃ¡mka od Jirky DaÅˆka: Ty tÅ™Ã­dy navÃ­c jsou tam proto, protoÅ¾e jinÃ© stÃ¡ty pouÅ¾Ã­vajÃ­ jinÃ© oddÄ›lovaÄe mÄ›n, desetinnÃ½ch ÄÃ­sel a tohle Å™eÅ¡Ã­ sprÃ¡vnÃ© formÃ¡tovÃ¡nÃ­ vÃ½pisu*
 
-Podívejte se na zápis v souboru plugin.json na decimal_point a thousands_separator.
+PodÃ­vejte se na zÃ¡pis v souboru ``plugin.json`` na ``decimal_point`` a ``thousands_separator``.
 ```json
 {
     
@@ -33,64 +33,71 @@ Podívejte se na zápis v souboru plugin.json na decimal_point a thousands_separat
 }
 ```
 
-###Ukázka kódu php souborù
+### UkÃ¡zka kÃ³du php souborÅ¯
+
 ```php
 <?php
 
 return [
-    'admin.link.site' => 'Zobrazit stránky',
-    'admin.link.newwin' => 'Nové okno',
-    'admin.link.home' => 'zpìt na hlavní stranu',
-    'admin.denied' => 'Nemáte dostateèná práva pro vstup do administrace.',
-    'admin.busy_overlay.text' => 'Prosím èekejte',
+    'admin.link.site' => 'Zobrazit strÃ¡nky',
+    'admin.link.newwin' => 'NovÃ© okno',
+    'admin.link.home' => 'zpÄ›t na hlavnÃ­ stranu',
+    'admin.denied' => 'NemÃ¡te dostateÄnÃ¡ prÃ¡va pro vstup do administrace.',
+    'admin.busy_overlay.text' => 'ProsÃ­m Äekejte',
     'admin.iplog' => 'Log IP adres',
-    'admin.moduleunavailable' => 'Modul není dostupnı.',
-    'admin.menu.index' => 'Pøehled',
-	.
-	.
-	.
-	
+    'admin.moduleunavailable' => 'Modul nenÃ­ dostupnÃ½.',
+    'admin.menu.index' => 'PÅ™ehled',
+	  //...
+	  //...
+	  //...
 ];
 ```
-Vidíme zde pole, kde na kadém øádku je jednotlivı klíè k dannému vırazu nebo textu. Je to vlastnì velmi jednoduché. Z tìchto language souborù pak èerpá kadı skript, nebo funkce a tak dále. Soubory jazykovıch balíèkù se ukládají v UTF8 (bez BOM) kódování. To umoní pouívat diakritiku a další speciální znaky u jinıch jazykù, ne je angliètina (italština, španìlština ...). Èeština, nìmèina, francouzština, ale napøíklad také tureètina a další jazyky obsahují své speciální znaky a diakritiku. Proto je nanejvıš vhodné soubory uloit jako UTF8.
+VidÃ­me zde pole, kde na kaÅ¾dÃ©m Å™Ã¡dku je jednotlivÃ½ klÃ­Ä k dannÃ©mu vÃ½razu nebo textu. Je to vlastnÄ› velmi jednoduchÃ©. Z tÄ›chto language souborÅ¯ pak ÄerpÃ¡ kaÅ¾dÃ½ skript, nebo funkce a tak dÃ¡le. Soubory jazykovÃ½ch balÃ­ÄkÅ¯ se uklÃ¡dajÃ­ v UTF8 bez [BOM](https://cs.wikipedia.org/wiki/Byte_order_mark) kÃ³dovÃ¡nÃ­. To umoÅ¾nÃ­ pouÅ¾Ã­vat diakritiku a dalÅ¡Ã­ speciÃ¡lnÃ­ znaky u jinÃ½ch jazykÅ¯, neÅ¾ je angliÄtina *(italÅ¡tina, Å¡panÄ›lÅ¡tina ...)*. ÄŒeÅ¡tina, nÄ›mÄina, francouzÅ¡tina, ale napÅ™Ã­klad takÃ© tureÄtina a dalÅ¡Ã­ jazyky obsahujÃ­ svÃ© speciÃ¡lnÃ­ znaky a diakritiku. Proto je nanejvÃ½Å¡ vhodnÃ© soubory uloÅ¾it jako UTF8.
 
-###Jak vypadá zápis v nìjakém pluginu nebo v základním systému
+###Jak vypadÃ¡ zÃ¡pis v nÄ›jakÃ©m pluginu nebo v zÃ¡kladnÃ­m systÃ©mu
 
-Stìejní je funkce lang zabudovaná v Sunlight. Napøíklad název tlaèítka pro chystanı extend bude vypadat takto:
-> _lang('downloadmanager.settings.download')
+StÄ›Å¾ejnÃ­ je funkce ``_lang()`` zabudovanÃ¡ v Sunlight. NapÅ™Ã­klad nÃ¡zev tlaÄÃ­tka pro chystanÃ½ extend bude vypadat takto: ``_lang('downloadmanager.settings.download')``
 
-Všimìme si, pøed slovem lang je podtrítko. To je velmi dùleité.
+VÅ¡imÄ›me si, pÅ™ed slovem ``lang`` je podtrÅ¾Ã­tko. To je velmi dÅ¯leÅ¾itÃ©.
 
-*Poznámka od Jirky Daòka: Funkce _lang() je dostupná globálnì bez nutnosti importu*
-
+> PoznÃ¡mka od Jirky DaÅˆka: Funkce _lang() je dostupnÃ¡ globÃ¡lnÄ› bez nutnosti importu
 
 
-A nyní se podíváme na zápis *langs* v souboru plugin.json. K èemu to vlastnì slouí? Kdy se podíváme do dokumentace jak má vypadat klíè  [langs](https://sunlight-cms.cz/dokumentace/pluginy/extend#option-langs), vidíme pøesnì popsáno a jaké vlastnosti zápis obsahuje. Ale pro lepší ujasnìní bych rád napsal, jak mi to vysvìtlil Jirka Danìk. 
 
-**Ukázka struktury kódu:**
+A nynÃ­ se podÃ­vÃ¡me na zÃ¡pis ``langs`` v souboru ``plugin.json``. K Äemu to vlastnÄ› slouÅ¾Ã­? KdyÅ¾ se podÃ­vÃ¡me do dokumentace jak mÃ¡ vypadat klÃ­Ä  [langs](https://sunlight-cms.cz/dokumentace/pluginy/extend#option-langs), vidÃ­me pÅ™esnÄ› popsÃ¡no a jakÃ© vlastnosti zÃ¡pis obsahuje. Ale pro lepÅ¡Ã­ ujasnÄ›nÃ­ bych rÃ¡d napsal, jak mi to vysvÄ›tlil Jirka DanÄ›k. 
+
+**UkÃ¡zka struktury kÃ³du:**
 
 ```json
 "langs": {
     "klic": "slozka"
 },
 ```
-V dokumentaci vidíme  jako *klíè* název *my_plugin*. Vìtšinou to mùe bıt název vámi vytváøeného pluginu. Dále tam vidíme název *lang*, co v tomto pøípadì je název sloky umístìné v koøenu pluginu. Mùete si ji pojmenovat i jinak, ale je dobré dodret urèité zásady psaní pluginù a pojmenovat takovou sloku jako *lang*.
-Uvedu to na pøíkladu u extendu pro Download Manager (ještì neexistuje veøejnì).  V pøedchozím obrázku jsme vidìli rùzná tlaèítka s èeskımi názvy. V jakémkoliv pluginu je potøeba pouít funkci _lang(). Kdy chcete zobrazit nìjakı pøeloenı text, do této funkce vloíte klíè (øetìzec) z pøekladovıch slovníkù. Napøíklad takto:
+
+V dokumentaci vidÃ­me  jako ``klÃ­Ä`` nÃ¡zev ``my_plugin``. VÄ›tÅ¡inou to mÅ¯Å¾e bÃ½t nÃ¡zev vÃ¡mi vytvÃ¡Å™enÃ©ho pluginu. DÃ¡le tam vidÃ­me nÃ¡zev ``lang``, coÅ¾ v tomto pÅ™Ã­padÄ› je nÃ¡zev sloÅ¾ky umÃ­stÄ›nÃ© v koÅ™enu pluginu. MÅ¯Å¾ete si ji pojmenovat i jinak, ale je dobrÃ© dodrÅ¾et urÄitÃ© zÃ¡sady psanÃ­ pluginÅ¯ a pojmenovat takovou sloÅ¾ku jako ``lang``.
+Uvedu to na pÅ™Ã­kladu u extendu pro Download Manager *(jeÅ¡tÄ› neexistuje veÅ™ejnÄ›)*. V pÅ™edchozÃ­m obrÃ¡zku jsme vidÄ›li rÅ¯znÃ¡ tlaÄÃ­tka s ÄeskÃ½mi nÃ¡zvy. V jakÃ©mkoliv pluginu je potÅ™eba pouÅ¾Ã­t funkci ``_lang()``. KdyÅ¾ chcete zobrazit nÄ›jakÃ½ pÅ™eloÅ¾enÃ½ text, do tÃ©to funkce vloÅ¾Ã­te klÃ­Ä *(Å™etÄ›zec)* z pÅ™ekladovÃ½ch slovnÃ­kÅ¯. NapÅ™Ã­klad takto:
+
 ```php
 _lang('downloadmanager.module.title')
 ```
-V tomto pøípadì jsem pouil pøeklad názvu pluginu (Download Manager) z jazykového slovníku pluginu. Proto je pøed textem module.title klíè (uvedenı v souboru plugin.json) - downloadmanager.  Ale v jazykovém souboru klíè uveden není:
+
+V tomto pÅ™Ã­padÄ› jsem pouÅ¾il pÅ™eklad nÃ¡zvu pluginu Download Manager z jazykovÃ©ho slovnÃ­ku pluginu. Proto je pÅ™ed textem ``module.title`` klÃ­Ä *(uvedenÃ½ v souboru plugin.json)* - ``downloadmanager``. JednÃ¡ se o prefix danÃ©ho jazykovÃ© sady. Ale v jazykovÃ©m souboru klÃ­Ä uveden nenÃ­:
+
 ```php
 'module.title' => 'Download Manager',
 ```
 
-Ovšem, pokud bychom chtìli pouít nìjakı systémovı pøeklad (napø. pro všeobecná tlaèítka a tak podobnì), není potøeba klíè pluginu vkládat. Systém SL si dannı øetìzec najde sám.
-Napøíklad název tlaèítka **Nahrát soubor** má v admin_dictionary.php øetìzec:
+OvÅ¡em, pokud bychom chtÄ›li pouÅ¾Ã­t nÄ›jakÃ½ systÃ©movÃ½ pÅ™eklad *(napÅ™. pro vÅ¡eobecnÃ¡ tlaÄÃ­tka a tak podobnÄ›)*, nenÃ­ potÅ™eba klÃ­Ä pluginu vklÃ¡dat. SystÃ©m SL si dannÃ½ Å™etÄ›zec najde sÃ¡m.
+NapÅ™Ã­klad nÃ¡zev tlaÄÃ­tka **NahrÃ¡t soubor** mÃ¡ v ``admin_dictionary.php`` Å™etÄ›zec:
+
 ```php
-'admin.fman.menu.upload' => 'Nahrát soubor',
+'admin.fman.menu.upload' => 'NahrÃ¡t soubor',
 ```
-V tomto pøípadì vyuíváme systémového pøekladu a klíè *downloadmanager* není potøeba vkládat. Zápis bude vypadat takto:
+
+V tomto pÅ™Ã­padÄ› vyuÅ¾Ã­vÃ¡me systÃ©movÃ©ho pÅ™ekladu a klÃ­Ä ``downloadmanager`` nenÃ­ potÅ™eba vklÃ¡dat. ZÃ¡pis bude vypadat takto:
+
 ```php
 _lang('admin.fman.menu.upload')
 ```
-Kdy si to shrneme. Pro vyuití systémovıch pøekladù není potøeba vkládat klíè uvedenı v plugin.json. Ale pro pøeklady konkrétní a specifické vlastnosti pluginu (které jsou naskriptovány pøímo v jazykovıch souborech danného pluginu - vìtšinou ve sloce lang) u klíè musíme pouít. Tím systém SL ví, kam má šáhnout a kde dannı øetìzec najít.
+
+KdyÅ¾ si to shrneme. Pro vyuÅ¾itÃ­ systÃ©movÃ½ch pÅ™ekladÅ¯ nenÃ­ potÅ™eba vklÃ¡dat klÃ­Ä uvedenÃ½ v ``plugin.json``. Ale pro pÅ™eklady konkrÃ©tnÃ­ a specifickÃ© vlastnosti pluginu (kterÃ© jsou naskriptovÃ¡ny pÅ™Ã­mo v jazykovÃ½ch souborech dannÃ©ho pluginu - vÄ›tÅ¡inou ve sloÅ¾ce lang) uÅ¾ klÃ­Ä musÃ­me pouÅ¾Ã­t. TÃ­m systÃ©m SL vÃ­, kam mÃ¡ Å¡Ã¡hnout a kde dannÃ½ Å™etÄ›zec najÃ­t.
