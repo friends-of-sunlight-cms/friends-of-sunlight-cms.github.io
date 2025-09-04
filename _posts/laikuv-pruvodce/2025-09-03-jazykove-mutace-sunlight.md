@@ -14,9 +14,9 @@ Sunlight je jeden ze systémů, který pracuje s jazykem. Ať už se jedná o ce
 
 ## Jak to funguje?
 
-Systém používá jednoduché pole v php souboru, kde je na každém řádku klíč k danému překladu. Základní jazykové balíčky (extendy) jsou v českém a anglickém jazyce a jsou umístěny ve složce Languages ``(\plugins\languages)``. Každý jazyk má svoji složku (adresář) pojmenovaný podle zásad [ISO Code](https://cs.wikipedia.org/wiki/Seznam_k%C3%B3d%C5%AF_ISO_639-2). Například čeština má název adresáře ``cs`` a angličtina ``en``.
-Velmi zajímavá informace ohledně ISO code je zde: [RSS-Specific Language Codes](https://www.rssboard.org/rss-language-codes). Zde se například dozvíme, jak rozlišit evropskou francouzštinu od kanadské.
-Ale podívejme se, jak to funguje. Ve složce ``cs`` najdeme tři soubory: admin_dictionary.php, dictionary.php a plugin.json. admin_dictionary.php je php skript pro administrační část Sunlight, dictionary.php pro veřejnou a soubor plugin.json inicializuje tento jazyk v celém systému Sunlight, tedy jako extend (plugin). U dalších jazykových balíčků *(např. en)* přibude další složka ``class``, ve které je soubor ``EnglishLanguage.php``. Je to třída, která určuje vlastnost jazyka, který se do dystému přidává. V tomto případě má název EnglishLanguage. Pro němčinu by to bylo DeutscheLanguage, pro francouzštinu FrancaisLanguage. A tak podobně. Proč to není u českého jazyka? protože to je systémový jazyk v českém CMS systému.
+Systém používá jednoduché pole v php souboru, kde je na každém řádku klíč k danému překladu. Základní jazykové balíčky *(extendy)* jsou v českém a anglickém jazyce a jsou umístěny ve složce Languages ``(\plugins\languages)``. Každý jazyk má svoji složku (adresář) pojmenovaný podle zásad [ISO Code](https://cs.wikipedia.org/wiki/Seznam_k%C3%B3d%C5%AF_ISO_639-2). Například čeština má název adresáře ``cs`` a angličtina ``en``.
+Velmi zajímavá informace ohledně ISO code je i zde: [RSS-Specific Language Codes](https://www.rssboard.org/rss-language-codes). Zde se například dozvíme, jak rozlišit evropskou francouzštinu od kanadské.
+Ale podívejme se, jak to funguje. Ve složce ``cs`` najdeme tři soubory: ``admin_dictionary.php``, ``dictionary.php`` a ``plugin.json``. ``admin_dictionary.php`` je php skript pro administrační část Sunlight, ``dictionary.php`` pro veřejnou a soubor ``plugin.json`` inicializuje tento jazyk v celém systému Sunlight, tedy jako extend *(plugin)*. U dalších jazykových balíčků *(např. en)* přibude další složka ``class``, ve které je soubor ``EnglishLanguage.php``. Je to třída, která určuje vlastnost jazyka, který se do dystému přidává. V tomto případě má název ``EnglishLanguage``. Pro němčinu by to bylo ``DeutscheLanguage``, pro francouzštinu ``FrancaisLanguage``. A tak podobně. Proč to není u českého jazyka? Protože to je systémový jazyk v českém CMS systému.
 
 *Poznámka od Jirky Daňka: Ty třídy navíc jsou tam proto, protože jiné státy používají jiné oddělovače měn, desetinných čísel a tohle řeší správné formátování výpisu*
 
@@ -51,7 +51,7 @@ return [
 ];
 ```
 
-Vidíme zde pole, kde na každém řádku je jednotlivý klíč k dannému výrazu nebo textu. Je to vlastně velmi jednoduché. Z těchto language souborů pak čerpá každý skript, nebo funkce a tak dále. Soubory jazykových balíčků se ukládají v UTF8 bez [BOM](https://cs.wikipedia.org/wiki/Byte_order_mark) kódování. To umožní používat diakritiku a další speciální znaky u jiných jazyků, než je angličtina *(italština, španělština ...)*. Čeština, němčina, francouzština, ale například také turečtina a další jazyky obsahují své speciální znaky a diakritiku. Proto je nanejvýš vhodné soubory uložit jako UTF8.
+Vidíme zde pole, kde na každém řádku je jednotlivý klíč k dannému výrazu nebo textu. Je to vlastně velmi jednoduché. Z těchto language souborů pak čerpá každý skript, nebo funkce a tak dále. Soubory jazykových balíčků se ukládají v UTF8 bez [BOM](https://cs.wikipedia.org/wiki/Byte_order_mark) kódování. To umožní používat diakritiku a další speciální znaky u jiných jazyků, než je angličtina *(italština, španělština ...)*. Čeština, němčina, francouzština, ale například také turečtina a další jazyky obsahují své speciální znaky a diakritiku. Proto je nezbytné soubory uložit jako UTF8.
 
 ###Jak vypadá zápis v nějakém pluginu nebo v základním systému
 
