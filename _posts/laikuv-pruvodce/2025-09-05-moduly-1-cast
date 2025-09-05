@@ -89,6 +89,6 @@ return function (array $args) {
 };
 ```
 Je to velmi jednoduché. Ukázka, jak to může vypadat:
-[![Hlavní Menu](mdl_hlavni_menu.jpg)]
+![Hlavní Menu](/assets/posts/mdl_hlavni_menu.jpg)
 
 O modulech toho bude více. Toto je první část z miniseriálu, který chystám. Příště budeme pokračovat jak toto menu dostat do Hlavního Menu - Ostatní. Tento examplemodul si můžete stáhnout u mě na gitu: [ExampleModul](https://github.com/Helwa-Surinen/Sunligt-CMS-laikuv-pruvodce/tree/main/examplemodul-part1).
