@@ -60,7 +60,10 @@ Stěžejní je funkce ``_lang()`` zabudovaná v Sunlight. Například název tla
 Všiměme si, před slovem ``lang`` je podtržítko. To je velmi důležité.
 
 > Poznámka od Jirky Daňka: Funkce _lang() je dostupná globálně bez nutnosti importu
+> 
+Následující obrázek ukazuje tlačítkové menu pro download manager ve Správě obsahu. Použitý lang kód je vyznačen zeleným rámečkem.
 
+[![Nastavení](/assets/images/dwnm_settings.jpg)]
 
 ### Registrace v pluginu
 
