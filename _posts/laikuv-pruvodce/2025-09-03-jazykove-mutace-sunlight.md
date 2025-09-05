@@ -63,7 +63,7 @@ Všiměme si, před slovem ``lang`` je podtržítko. To je velmi důležité.
 
 Následující obrázek ukazuje tlačítkové menu pro download manager ve Správě obsahu. Použitý lang kód je vyznačen zeleným rámečkem.
 
-[![Nastavení](/assets/images/dwnm_settings.jpg)]
+[![Nastavení](/assets/posts/jazykove-mutace-sunlight/dwnm_settings.jpg)]
 
 ### Registrace v pluginu
 
