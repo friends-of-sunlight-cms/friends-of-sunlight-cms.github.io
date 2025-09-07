@@ -11,13 +11,13 @@ tags:
   - moduly
 ---
 
-# Jak vytvořit v administračním rozhraní nové hlavní menu?
-Jistě mnozí z uživatelů Sunlight uvažovali nad tím, jak si vytvořit novou položku hlavního admin menu. Vlastně je to opravdu velmi jednoduché. SL, když ho prozkoumáte, najdete mnoho systémových a admin souborů, ve kterých se tuto informaci můžete dozvědět. Takže se podívejme na soubor gamedev\admin\modules.php. tento php skript obsahuje výchozí systémové položky modulů. Tak jak si otevřeme administrační rozhraní SL, vidíme horní lištu s menu (Přehled, Správa obsahu, Uživatelé a skupiny ... a tak dále.) To řeší tento soubor. A mi chceme do tohoto hlavního menu přidat další, svoji položku. Tak jdeme na to ...
+### Jak vytvořit v administračním rozhraní nové hlavní menu?
+Jistě mnozí z uživatelů Sunlight uvažovali nad tím, jak si vytvořit novou položku hlavního admin menu. Vlastně je to opravdu velmi jednoduché. SL, když ho prozkoumáte, najdete mnoho systémových a admin souborů, ve kterých se tuto informaci můžete dozvědět. Takže se podívejme na soubor ``\vaše doména\admin\modules.php``. tento php skript obsahuje výchozí systémové položky modulů. Tak jak si otevřeme administrační rozhraní SL, vidíme horní lištu s menu (Přehled, Správa obsahu, Uživatelé a skupiny ... a tak dále.) To řeší tento soubor. A mi chceme do tohoto hlavního menu přidat další, svoji položku. Tak jdeme na to ...
 
-Vytvoříme si nový plugin s názvem **examplemodul** (umístíme do plugins\extends\).
+Vytvoříme si nový plugin s názvem ``examplemodul`` (umístíme do plugins\extends\).
 
-**plugin.json**
-V naší složce examplemodul si vytvoříme soubor plugin.json, bez kterého se plugin nezaregistruje. Obsah vložte následující:
+###plugin.json
+V naší složce examplemodul si vytvoříme soubor ``plugin.json``, bez kterého se plugin nezaregistruje. Více o tom, jak konfigurovat extend se dozvíte v článku [Anatomie pluginů ](https://friends-of-sunlight-cms.github.io/serie/plugin-tutorial/anatomie-pluginu/) Obsah vložte následující:
 ```json
 {
     "$schema": "../../../system/schema/extend.json",
@@ -38,10 +38,10 @@ V naší složce examplemodul si vytvoříme soubor plugin.json, bez kterého se
     ]
 }
 ```
-**lang**
+###lang
 
-Pak si vytvoříme novou složku *lang*. Tam vložíme jazykové soubory pro tento plugin. V plugin.json vidíte, že pro tyto language řetězce budeme používat klíč *modul*.
-Ve složce lang si vytvoříme soubory cs.php a en.php. Do nich vložíme následující kód pro cs:
+Pak si vytvoříme novou složku ``lang``. Tam vložíme jazykové soubory pro tento plugin. V ``plugin.json`` vidíte, že pro tyto language řetězce budeme používat klíč ``modul``.
+Ve složce lang si vytvoříme soubory ``cs.php`` a ``en.php``. Do nich vložíme následující kód pro cs:
 ```php
 <?php
 
@@ -61,18 +61,18 @@ return [
 	'module.title' => 'Example Global menu',
 ];
 ```
-**event**
-Potom v našem pluginu vytvoříme složku *event* (musí být přímo ve složce *examplemodul*). Ve složce *event* si vytvoříme další složku s názvem *admin*.
-A v ní vytvoříme nový php soubor admin_init.php. Pozor, tento php skript musíme zaregistrovat v plugin.json. A to následujícím způsobem (mi to tam už máme):
+###event
+Potom v našem pluginu vytvoříme složku ``event`` (musí být přímo ve složce ``examplemodul``). Ve složce ``event`` si vytvoříme další složku s názvem ``admin``.
+A v ní vytvoříme nový php soubor ``admin_init.php``. Pozor, tento php skript musíme zaregistrovat v ``plugin.json``. A to následujícím způsobem (mi to tam už máme):
 ```json
     "events.admin": [
         {"event": "admin.init", "script": "event/admin/admin_init.php"}
     ]
 ```
-Vidíte, že nám tuto eventu odkazuje do složky admin na soubor admin_init.php.
+Vidíte, že nám tuto eventu odkazuje do složky ``admin`` na soubor ``admin_init.php``.
 
-**Vlastní skript, který zobrazí menu**
-A to je jádro našeho snažení. Vlastní obsah skriptu, který umožní zobrazení nějaké naší hlavní položky v admin menu. Když se vrátím na začátek, prohlédli jste si soubor modules.php. Náš skript bude velmi podobný. Viz ukázka:
+###Vlastní skript, který zobrazí menu
+A to je jádro našeho snažení. Vlastní obsah skriptu, který umožní zobrazení nějaké naší hlavní položky v admin menu. Když se vrátím na začátek, prohlédli jste si soubor ``modules.php``. Náš skript bude velmi podobný. Viz ukázka:
 ```php
 <?php
 
