@@ -16,7 +16,7 @@ Jistě mnozí z uživatelů Sunlight uvažovali nad tím, jak si vytvořit novou
 
 Vytvoříme si nový plugin s názvem ``examplemodul`` (umístíme do plugins\extends\).
 
-###plugin.json
+### plugin.json
 V naší složce examplemodul si vytvoříme soubor ``plugin.json``, bez kterého se plugin nezaregistruje. Více o tom, jak konfigurovat extend se dozvíte v článku [Anatomie pluginů ](https://friends-of-sunlight-cms.github.io/serie/plugin-tutorial/anatomie-pluginu/) Obsah vložte následující:
 ```json
 {
@@ -38,7 +38,7 @@ V naší složce examplemodul si vytvoříme soubor ``plugin.json``, bez kteréh
     ]
 }
 ```
-###lang
+### lang
 
 Pak si vytvoříme novou složku ``lang``. Tam vložíme jazykové soubory pro tento plugin. V ``plugin.json`` vidíte, že pro tyto language řetězce budeme používat klíč ``modul``.
 Ve složce lang si vytvoříme soubory ``cs.php`` a ``en.php``. Do nich vložíme následující kód pro cs:
@@ -61,7 +61,7 @@ return [
 	'module.title' => 'Example Global menu',
 ];
 ```
-###event
+### event
 Potom v našem pluginu vytvoříme složku ``event`` (musí být přímo ve složce ``examplemodul``). Ve složce ``event`` si vytvoříme další složku s názvem ``admin``.
 A v ní vytvoříme nový php soubor ``admin_init.php``. Pozor, tento php skript musíme zaregistrovat v ``plugin.json``. A to následujícím způsobem (mi to tam už máme):
 ```json
@@ -71,7 +71,7 @@ A v ní vytvoříme nový php soubor ``admin_init.php``. Pozor, tento php skript
 ```
 Vidíte, že nám tuto eventu odkazuje do složky ``admin`` na soubor ``admin_init.php``.
 
-###Vlastní skript, který zobrazí menu
+### Vlastní skript, který zobrazí menu
 A to je jádro našeho snažení. Vlastní obsah skriptu, který umožní zobrazení nějaké naší hlavní položky v admin menu. Když se vrátím na začátek, prohlédli jste si soubor ``modules.php``. Náš skript bude velmi podobný. Viz ukázka:
 ```php
 <?php
