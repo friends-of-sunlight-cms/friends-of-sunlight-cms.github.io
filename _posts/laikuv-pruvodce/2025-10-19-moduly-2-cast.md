@@ -50,17 +50,29 @@ Toto je výňatek ze souboru ``modules.php``:
 ## Vysvětlení jedotlivých položek pole (``Array`` - v php znamená pole) modulů:
 
 **``module-name``** - toto je název danného modulu. V základu vidíme v souboru ``modules.php``, že to může být Index (první hlavní stránka v administračním menu), nebo content (To je ``Správa obsahu``), nebo users (``Uživatelé a skupiny``) a tak podobně až po other (``Ostatní``).
-**``title``** - název modulu (menu), který se překládá do všech jazyků. Aby byla vidět např. ``Správa obsahu``, použijeme php kód ``_lang('admin.menu.content')``
+
+**``title``** - název modulu (menu), který se překládá do všech jazyků. Aby byla vidět např. ``Správa obsahu``, použijeme php kód ``_lang('admin.menu.content')``.
+
 **``access``** - Přístupová práva, zda toto menu uvidíme, nebo ne. Zde si všimněme jedné variace. U modulu ``Index`` je zápis ``True``. Znamená to, že každý přihlášený uživatel SL s přístupem do administrace vždy uvidí Hlavní stránku tohoto rozhraní. Mohlo by tam být také ``false``, to by pak uživatel neviděl. Ale zápis může vypadat i jinak. Pro modul ``Content`` nebo další je použit kód ``User::hasPrivilege('admincontent')``. V tom je SL úžasný redakční systém, protože si můžeme nastavit, jaká uživatelská role bude mít přístup do danných položek, extendů a tak podobně. V tomto případě role ``admincontent`` umožní přístup so ``Správy obsahu``.
+
 **``script``** - Všimněme si, že v souboru ``modules.php`` pole modulů neobsahuje tuto položku. To proto, že není potřeba odkazovat na zvláštní výkonný skript php. Ale například v našich pokusech extendů už tuto položku používáme. Není to nic jiného, než nadefinovanná cesta k výkonnému skriptu php, který danný modul ovládá a pracuje s ním. Kód zápisu může vypadat například takto:  ``__DIR__ . '../../../script/content_first_menu.php'``. Soubor ``content_first_menu.php`` je vlastní výkonný skript php, který pracuje za nás.
+
 **``url``** - Php je jazyk, který umožňuje psát odkazy zástupně. Snažím se to nyní vysvětlit laicky. Když budu v html odkazovat na nějaký soubor, např. ``modul.html``, napíši to přesně takto. Aby internetový prohlížeš takový soubor našel a zobrazil. Ale v php se to dá napsat i jinak. A to je obsahem tohoto pole. Využívá třídu Router, aby SL zobrazil danou cestu k nějakému skriptu. Když do url zadám kód Router::admin('content-first-menu'), v adresním řádku prohlížeče uvidíme cestu v tomto formátu: http://localhost/admin/index.php?p=content-first-menu. A prohlížeč ví a vidí kam má směřovat a obsah ``content-first-menu`` zobrazí.
+
 **``parent``** - Toto není nic jiného, než ``zpětný odkaz``. Klikneme si na nějaké menu, tlačítko, někam se dostaneme. Ale chceme zpátky. K tomu slouží link ``< návrat zpět`` vlevo nahoře. A položka ``parent`` nám to umožní.
+
 **``custom_header``** - Tato položka povolí nebo zakáže renderování ``názvu`` stránky, nebo ``backlinku`` (zpětného odkazu). Pro zápis použijeme ``True`` nebo ``false``.
+
 **``menu``** - Povolí nebo zakáže zobrazení ``modulu`` (menu) v ``hlavní administrační liště``. Opět použijeme ``True`` nebo ``false``. Všimněme si, že hlavní položka, např. ``Content`` má povoleno menu zobrazit. Ale jeho podmenu, např. ``content-sort`` už položku menu neobsahuje. Není tam potřeba. Mi nechceme aby se ``Řazení`` stránek zobrazilo, jako hlavní položka administračního menu lišty.
+
 **``menu_order``** - Pořadí jednotlivých ``modulů`` zobrazených ``z leva doprava``. ``Index`` má nulu, ``Content`` deset a tak dále. Nemusíme použít jen celé desítkové formáty čísel, ale i například 25, 34 a tak dále.
+
 **``other``** - Other, tedy česky Ostatní. Zde prostě zapneme nebo vypneme zobrazení obsahu nějakého extendu nebo menu v záložce ``Ostatní``. Opět pomocí zápisu True nebo false.
+
 **``other_order``** - Tak jako u ``menu_order`` bylo pořadí v rámci celé administrační lišty, tak zde to je pořadí menu vrámci pouze nabídky ``Ostatní``.
+
 **``other_system``** - Povolí, nebo zakáže zobrazení modulu jako ``systémový`` v nabídce ``Ostatní``. Opět pomocí zápisu True nebo false. Zde musím podotknout, že v základu SL jsou všechny moduly v nabídce ``Ostatní`` vedeny jako systémové. Osobně jsem nepotřeboval tuto funkci používat.
+
 **``other_icon``** - Krásná položka pole modulů v nabídce Ostatní, která vám vylepší vzhled tlačítka vloženou ikonou. Zápis pro tuto položku může vypadat např. takto: ``Router::path('admin/public/images/icons/big-broom.png')``. A nebo takto: ``Router::file(__DIR__ . '/../public/images/icons/big-broom.png')``.
 
 Tak to je laické vysvětlení jednotlivých položek modulů. Platí pro všechny způsoby použití modulů.
