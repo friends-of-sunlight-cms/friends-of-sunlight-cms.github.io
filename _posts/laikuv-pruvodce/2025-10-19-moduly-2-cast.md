@@ -103,9 +103,11 @@ Je to stejné, jako v [prvním dílu ](https://friends-of-sunlight-cms.github.io
 ```
 ### Rozdílnost v plugin.json
 
-``name`` Jiné pojmenování extendu, v tomto případě Example modul Part 2
-``description`` JIný popis pluginu
-``langs`` Klíč langs má jiný název. Pokud by byl stejný, jako u prvního dílu, tyto dva extendy by se začali hádat a systém by vyhazoval chyby.
+**``name``** - Jiné pojmenování extendu, v tomto případě Example modul Part 2.
+
+**``description``** - Jiný popis pluginu.
+
+**``langs``** - Klíč langs má jiný název. Pokud by byl stejný, jako u prvního dílu, tyto dva extendy by se začali hádat a systém by vyhazoval chyby.
 
 ### lang
 
@@ -188,6 +190,7 @@ Více o této problematice se dočteme v dokumentaci SL [Podpora .htaccess](http
 
 
 Když tedy máme ošetřen soubor .htaccess, ikonka v tlačítku se už ukáže.
+
 ![Hlavní Menu](/assets/posts/mdl_other_menu.jpg)
 
 Jak vidíte, je to v zásadě zcela stejný postup, jak vytvořit extend. jen s malou korekcí. V tom je CMS Sunlight úžasný systém. Samozřejmě ukázkový extend si můžete opět stáhnout u mě na gitu: [ExampleModul](https://github.com/Helwa-Surinen/Sunligt-CMS-laikuv-pruvodce/tree/main/examplemodul-part2).
